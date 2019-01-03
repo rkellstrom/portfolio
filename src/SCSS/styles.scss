@@ -1,0 +1,46 @@
+@import "_config.scss";
+//@import "_andy.scss";
+
+header {
+  width: 100%;
+  position: fixed;; //needed for logo placement
+  background-color: $lt-gray;
+  height: 90px;
+  .logo {
+    position: absolute;
+    left: 15px; top: 50%;
+    @include translateY(-50%);
+  }
+
+nav,
+nav ul,
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+nav {
+    position: absolute;
+    right: 15px; top: 50%;
+    @include translateY(-50%);
+    ul li {
+      list-style: none;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    ul li a{
+      color: $black-light;
+    }
+    ul li a.active{
+      color: $red;
+    }
+  }
+
+} //end of Header
+
+
+p {color:#666}
+h1 {font-family: 'Staatliches', cursive; font-size: 42px;}
+
+.push-down {
+  padding-top: 90px; //pushes page down
+}

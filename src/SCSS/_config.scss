@@ -1,0 +1,47 @@
+
+
+//mixins
+
+@mixin translateY($e) {
+  -webkit-transform: translateY($e);
+  -moz-transform: translateY($e);
+  transform: translateY($e);
+}
+
+@mixin transition($e) {
+  -webkit-transition: transition($e);
+  -moz-transition: transition($e);
+  transition: transition($e);
+}
+
+
+
+//sass shit
+$black: #000000;
+$black-light: #333333;
+$gray: #666666;
+$lt-gray: #f5f5f5;
+$white: #ffffff;
+$red: #FF0000;
+
+$btn-hover-color: pink;
+$border: #e1e1e1;
+
+html {background-color: $white;}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:16px;
+  }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $red;
+  //@include transition:(.4s ease-in-out);
+}
+.container-fluid {
+  line-height: 24px;
+}
