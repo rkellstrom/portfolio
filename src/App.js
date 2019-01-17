@@ -9,6 +9,7 @@ import './CSS/styles.css';
 import Homepage from './components/pages/homePage';
 import Header from './components/headercomponent/header';
 import Casestudy from './components/pages/casestudy';
+
 //import Footer from './components/footercomponent/footer';
 
 

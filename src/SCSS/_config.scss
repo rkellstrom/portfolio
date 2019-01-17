@@ -14,6 +14,35 @@
   transition: transition($e);
 }
 
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.glow {
+  font-size: 80px;
+  color: #000;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+/*linearGradient(#DB00FF, #3023AE);*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #DB00FF, 0 0 40px #DB00FF, 0 0 50px #DB00FF, 0 0 60px #DB00FF, 0 0 70px #DB00FF;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #A25BCD, 0 0 40px #A25BCD, 0 0 50px #A25BCD, 0 0 60px #A25BCD, 0 0 70px #A25BCD, 0 0 80px #A25BCD;
+  }
+}
+
 
 
 //sass shit
@@ -23,6 +52,8 @@ $gray: #666666;
 $lt-gray: #f5f5f5;
 $white: #ffffff;
 $red: #FF0000;
+$primary: #038BAF;
+$brandYellow:#F8E71C;
 
 $btn-hover-color: pink;
 $border: #e1e1e1;
@@ -31,6 +62,7 @@ html {background-color: $white;}
 body {
   font-family: 'Open Sans', sans-serif;
   font-size:16px;
+  margin:0;
   }
 
 a {
