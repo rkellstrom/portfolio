@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SimpleTable from './../elements/basictable';
 import Plx from 'react-plx';
 
 
