@@ -11,7 +11,8 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 const styles = theme => ({
 
   item: {
-    zIndex: '9999'
+    zIndex: '9999',
+    background:'white',
   },
   container: {
     margin: 'auto',
@@ -97,7 +98,7 @@ class Homepage extends Component {
     return (
 
 
-      <Grid container className={classes.container} spacing={24}>
+      <Grid container className={classes.container} spacing={0}>
         <Grid item sm={4} className={classes.item}>
           <Plx className='row1Parallax' parallaxData={ rowease }>
             <Grid justify="center" container className="skillblocks">
@@ -225,7 +226,10 @@ class Homepage extends Component {
          </Plx>
         </Grid>
           <Plx className='row1Parallax' parallaxData={ row3ease }>
-        <Timeline /></Plx>
+            <Grid item md={12} className={classes.item} align="center">
+            <Timeline />
+            </Grid>
+          </Plx>
     </Grid>
 
 

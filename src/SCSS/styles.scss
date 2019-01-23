@@ -1,6 +1,8 @@
 @import "_config.scss";
 //@import "_andy.scss";
 
+.body-container h3 {font-size: 18px; color: #3023AE;}
+
 header {
   width: 100%;
   position: relative;
@@ -19,15 +21,15 @@ header {
   .twitterlink,
   .linkedInlink
   {
-    padding-left:15px;
-    color: $brandYellow
+    padding-left:6px;
+    color: $brandYellow;
   }
-  .social {margin: 0;padding: 0;}
-  .social svg {position: relative;}
+  .social {margin: 0;padding: 10px 0px 0px 0px; }
+  .social svg {position: relative; margin-bottom: -6px;}
   ul {list-style:none;}
   ul li {display:inline-block;list-style:none; margin-left: 10px
 }
-.navbar {color: $brandYellow;}
+.navbar {color: $brandYellow; z-index: 9999; position: relative;}
 nav,
 nav ul,
 nav ul li {
@@ -58,7 +60,7 @@ nav {
       width: 300px;
       -webkit-transform: translateY(-50%);
       transform: translateY(-100%);
-      color: black;
+      color: $secondary;
       position: absolute;
       height: 50px;
       font-size: 159px;
@@ -78,13 +80,13 @@ img.dude, img.dude2 {
   position: ABSOLUTE;
     right: 12%;
     bottom: 0;
-    max-width: 30%;
+    max-width: 340px;
     z-index: 999;
 }
 
-.skillblocks svg {font-size: 100px;}
+p {color:$gray}
 
-p {color:#666}
+.skillblocks svg {font-size: 100px;}
 
 .skillTitle {
   width: 100%;
@@ -104,4 +106,31 @@ p {color:#666}
 	     url('./darkheart-script.svg#youworkforthem') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@media only screen and (max-width: 600px)  {
+
+header h1 {
+    left: 6%;
+    top: 5%;
+    width: 300px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-100%);
+    color: $secondary;
+    position: absolute;
+    height: 50px;
+    font-size: 150px;
+    font-family: DarkHeartScript;
+    font-weight: lighter;
+    z-index: 9999;
+}
+
+img.dude {
+  position: ABSOLUTE;
+  right: -6%;
+  bottom: -380px;
+  max-width: 600px;
+  z-index: 999;
+}
+
 }
