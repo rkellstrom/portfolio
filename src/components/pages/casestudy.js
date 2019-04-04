@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import Plx from 'react-plx'; //https://www.npmjs.com/package/react-plx
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 
+// Images
 import candiard from './img/carndia-card-header.png';
 import espm from './img/espm-card-header.png';
 import ffbrand from './img/ffbrand-card-header.png';
+import ribbit from './img/ribbit-card-header.png';
 
 const styles = theme => ({
 
@@ -46,20 +46,22 @@ const styles = theme => ({
   },
 });
 
-
-
-// An array of parallax effects to be applied - see below for detail
-const parallaxData = [
+const cardParallax = [
   {
     start: 0,
-    end: 500,
+    end: 0,
     properties: [
       {
-        startValue: 1,
-        endValue: 5,
-        property: 'scale',
-
+        startValue: 100,
+        endValue: 0,
+        property: "translateY"
       },
+      {
+        startValue: 0,
+        endValue: 1,
+        property: "opacity"
+      },
+
     ],
   },
 ];
@@ -71,15 +73,20 @@ class Casestudy extends Component {
 
     return (
 
+
+
 <Grid container className={classes.container} spacing={24}>
   <Grid item sm={4} className={classes.item}>
-    <Card className={classes.card}>
+    <Plx className='row1Parallax' parallaxData={ cardParallax }>
+    <Card className={classes.card,'card'}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={espm}
           title="My Work"
         />
+
+
       <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
             Energy Star Portfolio Manager
@@ -90,10 +97,11 @@ class Casestudy extends Component {
         </CardContent>
       </CardActionArea>
     </Card>
+    </Plx>
   </Grid>
   <Grid item sm={4} className={classes.item}>
     <Link to={'/'}>
-    <Card className={classes.card}>
+    <Card className={classes.card, 'card'}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -114,6 +122,7 @@ class Casestudy extends Component {
     </Link>
   </Grid>
   <Grid item sm={4} className={classes.item}>
+    <Link to={'/ff-branding'}>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
@@ -123,7 +132,7 @@ class Casestudy extends Component {
         />
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
-            FirstFuel Branding Reboot
+            FirstFuel Company Branding Redesign
           </Typography>
           <Typography component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -133,69 +142,25 @@ class Casestudy extends Component {
       </CardActionArea>
 
     </Card>
+  </Link>
   </Grid>
-
   <Grid item sm={4} className={classes.item}>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={candiard}
-          title="My Work"
+          image={ribbit}
+          title="Ribbit Branding"
         />
       <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
-            Energy Star Portfolio Manager
+            Ribbit Branding &amp; Mobile Application
           </Typography>
           <Typography component="p">
-            PG&E asked my team to design a portfolio application to manage commerical properties as a single unit...Phew.
+            Ribbit is a start up who were looking for some creative direction. I helped them through the early seed funding process.
           </Typography>
         </CardContent>
       </CardActionArea>
-
-    </Card>
-  </Grid>
-  <Grid item sm={4} className={classes.item}>
-    <Link to={'/'}>
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={candiard}
-          title="Candia Road Brewing"
-        />
-        <CardContent className={classes.content}>
-          <Typography gutterBottom variant="h5" component="h2">
-            Candia Road Brewing Company branding
-          </Typography>
-          <Typography component="p">
-            The team at Candia Road Brewing came to me to develop the new branding and can art. Boy did we make waves.
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-
-    </Card>
-    </Link>
-  </Grid>
-  <Grid item sm={4} className={classes.item}>
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={candiard}
-          title="Contemplative Reptile"
-        />
-        <CardContent className={classes.content}>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-
     </Card>
   </Grid>
 </Grid>

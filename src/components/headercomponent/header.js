@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavLink from './navlinks';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Hidden from '@material-ui/core/Hidden';
@@ -85,9 +84,9 @@ class Header extends Component {
         <Media query="(max-width: 768px)">
           {matches =>
             matches ? (
-              <img className='dude' src={dude} />
+              <img className='dude' alt='headerdude' src={dude} />
             ) : (
-              <img className='dude2' src={dude2} />
+              <img className='dude2' alt='headerdude2' src={dude2} />
             )
           }
         </Media>
